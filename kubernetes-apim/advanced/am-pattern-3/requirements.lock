@@ -1,0 +1,9 @@
+dependencies:
+- name: mysql-am
+  repository: https://helm.wso2.com
+  version: 4.0.0-1
+- name: nfs-server-provisioner
+  repository: https://helm.wso2.com
+  version: 1.1.0
+digest: sha256:da41a700b2cba53bde5686b194d190fd0b5afe9b41385a68835c64fc5413b367
+generated: "2025-04-29T14:54:42.976153118Z"

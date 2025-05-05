@@ -1,0 +1,36 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: wso2am-ingress
+  namespace: wso2
+  annotations:
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"   # ➔ اضافه شده
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: am.wso2.com
+      http:
+        paths:
+          - path: /publisher
+            pathType: Prefix
+            backend:
+              service:
+                name: wso2am-pattern-1-am-service
+                port:
+                  number: 9443
+          - path: /devportal
+            pathType: Prefix
+            backend:
+              service:
+                name: wso2am-pattern-1-am-service
+                port:
+                  number: 9443
+          - path: /admin
+            pathType: Prefix
+            backend:
+              service:
+                name: wso2am-pattern-1-am-service
+                port:
+                  number: 9443
+
